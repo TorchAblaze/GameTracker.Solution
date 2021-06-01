@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model GameTracker.Models.Game
+
+<h4>Add a new game</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+
+    @Html.Label("Select console")
+    @Html.DropDownList("PlatformId")
+
+    <input type="submit" value="Add new item" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all items", "Index")</p>

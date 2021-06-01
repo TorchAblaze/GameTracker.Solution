@@ -1,0 +1,33 @@
+p,
+li {
+  font-size: large;
+  margin-bottom: 15px;
+}
+
+div#footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: #ccc;
+  background: #333;
+  padding: 8px;
+}
+
+a:link,
+a:visited {
+  color: black;
+  font-size: medium;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid rgb(190, 190, 255);
+  border-radius: 50px;
+  margin: 3px;
+  width: 14em;
+}
+
+a:hover {
+  background-color: lavender;
+}

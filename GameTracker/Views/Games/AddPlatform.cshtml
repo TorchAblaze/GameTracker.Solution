@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model GameTracker.Models.Game
+
+<h2>Add a platform</h2>
+
+<h4>Add a platform to this game: @Html.DisplayFor(model => model.Title)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.GameId)
+
+  @Html.Label("Select platform")
+  @Html.DropDownList("PlatformId")
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

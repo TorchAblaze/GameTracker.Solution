@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@using GameTracker.Models;
+@model List<GameTracker.Models.Game>;
+
+<h1>GAMES</h1>
+
+
+<h1>Games for @User.Identity.Name</h1>
+
+@if (Model.Any())
+{
+  <ul>
+    @foreach (Game game in Model)
+    {
+      <li>@Html.ActionLink($"{game.Title}", "Details", new { id = game.GameId })</li>
+    }
+  </ul>
+} 
+else
+{
+  <h3>No games have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Add new Game", "Create")</p>
