@@ -20,7 +20,7 @@ A user can create an account and add to a list of consoles and games. A user can
 ### Installation
 
 1. Clone the repository: `$ git clone https://github.com/TorchAblaze/GameTracker.Solution.git`
-2. Navigate to the `GameTracker.Solution}` directory on your computer
+2. Navigate to the `GameTracker.Solution` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. To setup a SQL database using MySQL:
    - Create an `appsettings.json` file in the `GameTracker` directory
