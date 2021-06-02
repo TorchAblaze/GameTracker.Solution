@@ -1,7 +1,24 @@
+body {
+  box-sizing: content-box;
+  text-align: center;
+  background-color: rgb(42, 42, 42);
+  color: lavender;
+  font-family: "Courier New", Courier, monospace;
+  border-left: 100px solid rgb(221, 221, 255);
+  border-right: 100px solid rgb(221, 221, 255);
+  height: 100%;
+  height: 100vmax;
+}
+
 p,
 li {
   font-size: large;
   margin-bottom: 15px;
+  color: whitesmoke;
+}
+
+.bottom {
+  margin-bottom: 50px;
 }
 
 div#footer {
@@ -10,19 +27,21 @@ div#footer {
   left: 0px;
   width: 100%;
   color: #ccc;
-  background: #333;
+  background: rgba(51, 51, 51, 0.541);
   padding: 8px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 a:link,
 a:visited {
-  color: black;
+  color: rgb(247, 244, 244);
   font-size: medium;
   padding: 9px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border: 2px solid rgb(190, 190, 255);
+  border: 2px solid rgb(221, 221, 255);
   border-radius: 50px;
   margin: 3px;
   width: 14em;
@@ -30,4 +49,15 @@ a:visited {
 
 a:hover {
   background-color: lavender;
+  color: black;
+}
+
+.container {
+  /* box-sizing: content-box; */
+  background-color: rgb(42, 42, 42);
+  width: 80%;
+  height: 100%;
+  /* height: 100vh; */
+  /* border-left: 5px solid rgba(255, 0, 0, 0.281);
+  border-right: 5px solid rgba(255, 0, 0, 0.281); */
 }

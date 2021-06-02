@@ -17,7 +17,7 @@ namespace GameTracker.Models
     public string Genre { get; set; }
 
     [Display(Name = "Release Date")]
-    public DateTime ReleaseDate { get; set; }
+    public DateTime ReleaseDate { get; set; } = DateTime.Now;
     public string Link { get; set; }
     public virtual ICollection<GamePlatform> JoinEntities { get; }
   }

@@ -11,11 +11,11 @@
   <h3>No platforms have been added yet!</h3>
 } 
 
-<ul>
-  @foreach(Platform platform in Model)
-  {
-    <li>@Html.ActionLink($"{platform.Name}", "Details", new { id = platform.PlatformId })</li>
-  }
-</ul>
+
+@foreach(Platform platform in Model)
+{
+  <p>@Html.ActionLink($"{platform.Name}", "Details", new { id = platform.PlatformId })</p>
+}
+
 
 <p>@Html.ActionLink("Add new platform", "Create")</p>

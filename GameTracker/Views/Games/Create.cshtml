@@ -9,9 +9,18 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Title)
-    @Html.TextBoxFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title, new {@class="form-control"})
 
-    @Html.Label("Select console")
+    @Html.LabelFor(model => model.Genre)
+    @Html.TextBoxFor(model => model.Genre, new {@class="form-control"})
+
+    @Html.LabelFor(model => model.ReleaseDate)
+    @Html.TextBoxFor(model => model.ReleaseDate, new {@class="form-control"})
+
+    @Html.LabelFor(model => model.Link)
+    @Html.TextBoxFor(model => model.Link, new {@class="form-control"})
+
+    @Html.Label("Add platform")
     @Html.DropDownList("PlatformId")
 
     <input type="submit" value="Add new item" class="btn btn-default" />

@@ -33,15 +33,20 @@ namespace GameTracker.Controllers
         public async Task<ActionResult> Register (RegisterViewModel model)
         {
             var user = new ApplicationUser { UserName = model.Email };
-            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                // string error = "Please enter a valid password";
-                // return View(error); //put error handling for password here
+            if(model.Password != null) {
+                IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    // string error = "Please enter a valid password";
+                    // return View(error); //put error handling for password here
+                    return RedirectToAction("Error");
+                }
+            } else {
+                return RedirectToAction("Error");
             }
         }
 
@@ -53,14 +58,21 @@ namespace GameTracker.Controllers
         [HttpPost]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
-            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
-            if (result.Succeeded)
+            if (model.Password != null || model.Email != null)
             {
-                return RedirectToAction("Index");
-            }
-            else
+                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
+            } 
+            else 
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
 
@@ -69,6 +81,11 @@ namespace GameTracker.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }

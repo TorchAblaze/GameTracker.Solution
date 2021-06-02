@@ -12,12 +12,10 @@
 
 @if (Model.Any())
 {
-  <ul>
-    @foreach (Game game in Model)
-    {
-      <li>@Html.ActionLink($"{game.Title}", "Details", new { id = game.GameId })</li>
-    }
-  </ul>
+  @foreach (Game game in Model)
+  {
+    <p>@Html.ActionLink($"{game.Title}", "Details", new { id = game.GameId })</p>
+  }
 } 
 else
 {

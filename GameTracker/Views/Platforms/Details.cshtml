@@ -15,12 +15,10 @@
 else
 {
   <h4>Games the platform contains:</h4>
-  <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Game.Title</li>
+    <p>@join.Game.Title</p>
   }
-  </ul>
 }
 
 <p>@Html.ActionLink("Add a game", "AddGame", new { id = Model.PlatformId })</p>

@@ -13,12 +13,53 @@
   @Html.HiddenFor(model => model.GameId)
 
   @Html.LabelFor(model => model.Title)
+  <br>
   @Html.EditorFor(model => model.Title)
-
+  <br>
+  <br>
+  @Html.LabelFor(model => model.Genre)
+  <br>
+  @Html.EditorFor(model => model.Genre)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.ReleaseDate)
+  <br>
+  @Html.EditorFor(model => model.ReleaseDate)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.Link)
+  <br>
+  @Html.EditorFor(model => model.Link)
+  <br>
+  <br>
   @Html.Label("Select platform")
+  <br>
   @Html.DropDownList("PlatformId")
-
+  <br>
+  <br>
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <p>This game does not belong to any platforms</p>
+  }
+  else
+  {
+    <h4>Platforms this game belongs to:</h4>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <p>@join.Platform.Name</p>
+      @using (Html.BeginForm("DeletePlatform", "Games"))
+      {
+        @Html.Hidden("joinId", @join.GamePlatformId)
+        <input type="submit" value="Delete"/>
+        <br>
+        <br>
+        <br>
+      }
+    }
+  }
   <input type="submit" value="Save" />
+  <br>
+  <br>
 }
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
