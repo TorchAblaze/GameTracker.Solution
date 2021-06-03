@@ -43,6 +43,7 @@ namespace GameTracker.Controllers
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
       game.User = currentUser;
+      // Game.GetGames(game.Title);
       _db.Games.Add(game);
       _db.SaveChanges();
       if (PlatformId != 0)

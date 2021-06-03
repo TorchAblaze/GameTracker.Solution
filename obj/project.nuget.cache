@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zo/v2pR2FVS0WAF3DXMjCp7994mHuPGoxIIPRjuw68oLfIHVc/Mmso55tC443JDv2++gsYS8ej59mftKpGf4QQ==",
+  "success": true,
+  "projectFilePath": "/Users/torch/Desktop/Epicodus/Week12/GameTracker.Solution/GameTracker.Solution.csproj",
+  "expectedPackageFiles": [
+    "/Users/torch/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/torch/.nuget/packages/restsharp/106.6.10/restsharp.106.6.10.nupkg.sha512"
+  ],
+  "logs": []
+}

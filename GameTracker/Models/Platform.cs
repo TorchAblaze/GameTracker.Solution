@@ -7,10 +7,11 @@ namespace GameTracker.Models
     public Platform()
     {
       this.JoinEntities = new HashSet<GamePlatform>();
+      this.MyImage = $"../GameTracker/wwwroot/img/{this.Name}.png";
     }
-
-    public int PlatformId { get; set; }
     public string Name { get; set; }
+    public int PlatformId { get; set; }
     public virtual ICollection<GamePlatform> JoinEntities { get; set; }
+    public string MyImage { get; set; }
   }
 }
